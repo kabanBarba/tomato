@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BMICalculator.MainPage"
+             Title="Калькулятор ИМТ">
+    <ScrollView>
+        <StackLayout Spacing="20" Padding="30">
+            <Label Text="Калькулятор ИМТ" 
+                   FontSize="Title"
+                   HorizontalOptions="Center"/>
+
+            <!-- Поле ввода веса -->
+            <Frame BorderColor="#512BD4" CornerRadius="10">
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <Label Text="Вес (кг):" VerticalOptions="Center"/>
+                    <Entry x:Name="WeightEntry" 
+                           Keyboard="Numeric"
+                           Placeholder="Введите вес"/>
+                </StackLayout>
+            </Frame>
+
+            <!-- Поле ввода роста -->
+            <Frame BorderColor="#512BD4" CornerRadius="10">
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <Label Text="Рост (м):" VerticalOptions="Center"/>
+                    <Entry x:Name="HeightEntry" 
+                           Keyboard="Numeric"
+                           Placeholder="Введите рост"/>
+                </StackLayout>
+            </Frame>
+
+            <!-- Выбор пола -->
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="30">
+                <Button x:Name="MaleButton" 
+                        Text="Мужской" 
+                        CornerRadius="20"
+                        WidthRequest="120"
+                        Clicked="OnGenderSelected"/>
+
+                <Button x:Name="FemaleButton" 
+                        Text="Женский" 
+                        CornerRadius="20"
+                        WidthRequest="120"
+                        Clicked="OnGenderSelected"/>
+            </StackLayout>
+
+            <!-- Кнопка расчета -->
+            <Button Text="Рассчитать ИМТ" 
+                    Clicked="OnCalculateClicked"
+                    BackgroundColor="#512BD4"
+                    TextColor="White"
+                    CornerRadius="10"/>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
